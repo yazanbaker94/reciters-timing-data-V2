@@ -4,13 +4,16 @@
 
 # Quran Word-Level Alignment Data
 
-Word-level timing data for 19 Quran reciters. Each JSON contains 6,236 ayahs with precise word timestamps.
+Word-level timing data for 3 Quran reciters. Each JSON contains 6,236 ayahs with precise word timestamps.
 
 ## Model
 **OpenAI Whisper large-v3** with dynamic time warping alignment against [Uthmani text](https://tanzil.net/pub/download/index.php?quranType=uthmani&outType=txt-2&agree=true).
 
 ## Generation
 Created using `Quran_Aligner_Colab.ipynb` (Google Colab) or `kaggle.ipynb` (Kaggle with T4 GPU). Audio from [everyayah.com](https://everyayah.com).
+
+### Quran_Aligner_Skip_Bismillah.ipynb
+A specialized variant of the aligner for reciters who **skip the Bismillah** at the beginning of surahs in their audio recordings. Standard alignment expects Bismillah in the audio, causing misalignment when it's absent. This notebook adjusts the reference text to match the actual audio content, ensuring accurate word-level timestamps for these reciters.
 
 ## Format
 ```json
